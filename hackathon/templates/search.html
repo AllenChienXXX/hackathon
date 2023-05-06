@@ -1,9 +1,11 @@
 {% block content %}
     <h1>Answer:</h1>
-    {% for i in range(len) %}
-<p>{{ stringlist[i] }}<a href="{{ urls[i] }}" target="_blank">{{ urls[i] }}</a></p>
-    {%endfor %}
-    <p>{{ stringlist[-1] }}</p>
+    {% if gpt %}
+        {% for i in range(len) %}
+            <p>{{ stringlist[i] }}<a href="{{ urls[i] }}" target="_blank">{{ urls[i] }}</a></p>
+        {%endfor %}
+        <p>{{ stringlist[-1] }}</p>
+    {% endif %}
 <!--    <p>{{ answer }}</p>-->
     {% if service_link_title %}
         <h2>Related Services:</h2>
